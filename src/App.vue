@@ -5,16 +5,46 @@ const handleClick = (button) => {
 </script>
 
 <template>
-  <div class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="grid grid-cols-2 gap-4 p-6 bg-white rounded-lg shadow-lg">
-      <button @click="handleClick(1)" class="p-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Button 1</button>
-      <button @click="handleClick(2)" class="p-4 bg-green-500 text-white rounded-lg hover:bg-green-600">Button 2</button>
-      <button @click="handleClick(3)" class="p-4 bg-red-500 text-white rounded-lg hover:bg-red-600">Button 3</button>
-      <button @click="handleClick(4)" class="p-4 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">Button 4</button>
+  <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <!-- Motto Section -->
+    <div class="text-4xl font-bold mb-4">
+      <p>"Kattanj rá te is!"</p>
+      <hr class="w-24 mt-2 border-2 border-gray-500" />
+    </div>
+    <!-- Advertisement Section -->
+    <div class="advertisement w-full mt-10 bg-gray-200 text-center p-6">
+      <p class="text-lg text-gray-700 font-semibold">Reklám helye, szupec akciók meg ilyenek🎉</p>
+    </div>
+    <!-- Buttons Section -->
+    <table class="table-auto bg-white p-6 rounded-lg shadow-lg">
+      <tbody class="space-y-6">
+        <tr class="space-x-6">
+          <td><button @click="handleClick(1)" class="button">Vallás</button></td>
+          <td><button @click="handleClick(2)" class="button">Horoszkóp</button></td>
+          <td><button @click="handleClick(3)" class="button">Személyiség típus</button></td>
+        </tr>
+        <tr class="space-x-6">
+          <td><button @click="handleClick(4)" class="button">Nemzetiség</button></td>
+          <td><button @click="handleClick(5)" class="button">Szexualitás</button></td>
+          <td><button @click="handleClick(6)" class="button">Kínai horoszkóp</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Advertisement Section 2 -->
+    <div class="advertisement w-full mt-10 bg-gray-200 text-center p-6">
+      <p class="text-lg text-gray-700 font-semibold">Reklám helye, szupec akciók meg ilyenek🎉</p>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* Optional custom styles */
+/* Ensure all buttons have the same fixed size */
+.button {
+  width: 150px;  /* Fixed width for all buttons */
+  height: 100px; /* Fixed height for all buttons */
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  text-align: center; /* Center text inside button */
+}
 </style>
