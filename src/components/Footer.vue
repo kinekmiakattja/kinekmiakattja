@@ -1,6 +1,6 @@
 <template>
     <footer class="bg-gray-800 text-white p-4 text-center w-full">
-      <p>© 2025 My Vue App. All rights reserved.</p>
+      <p>© 2025 KinekMiAKattja. All rights reserved.</p>
     </footer>
   </template>
   

@@ -53,12 +53,30 @@ const handleClick = (button) => {
 </script>
 
 <style scoped>
-/* Table Styles */
+/* Center the table in the middle of the page */
 .table {
-  width: 100%;
-  justify-content: center;
+  display: flex;  /* Use flexbox to align items */
+  justify-content: center;  /* Center items horizontally */
+  align-items: center;  /* Center items vertically */
+  margin: 0;  /* Remove default margin */
 }
 
+/* Each row inside the table should also be flex */
+.table tbody {
+  display: flex; 
+  flex-direction: column;
+  gap: 10px;  /* Add space between rows */
+  justify-content: center;
+  align-items: center;
+}
+
+.table tr {
+  display: flex;
+  justify-content: center;  /* Center buttons horizontally within the row */
+  gap: 20px;  /* Space between buttons */
+}
+
+/* Button styles stay the same */
 .button {
   width: 200px;  /* Make buttons bigger */
   height: 100px;
