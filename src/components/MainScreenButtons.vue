@@ -1,23 +1,23 @@
 <template>
-    <table>
-      <tbody>
-        <tr>
-            <td><button @click="goToReligion" class="button">Vallás</button></td>
-            <td><button @click="handleClick(2)" class="button">Horoszkóp</button></td>
-            <td><button @click="handleClick(3)" class="button">Személyiség típus</button></td>
-        </tr>
-        <tr>
-            <td><button @click="handleClick(4)" class="button">Nemzetiség</button></td>
-            <td><button @click="handleClick(5)" class="button">Szexualitás</button></td>
-            <td><button @click="handleClick(6)" class="button">Kínai horoszkóp</button></td>
-        </tr>
-        <tr>
-            <td><button @click="handleClick(4)" class="button">Görög mitólógia</button></td>
-            <td><button @click="handleClick(5)" class="button">Római mitólógia</button></td>
-            <td><button @click="handleClick(6)" class="button">Egyéb..</button></td>
-        </tr>
-      </tbody>
-    </table>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td><button @click="goToReligion" class="button">Vallás</button></td>
+        <td><button @click="handleClick(2)" class="button">Horoszkóp</button></td>
+        <td><button @click="handleClick(3)" class="button">Személyiség típus</button></td>
+      </tr>
+      <tr>
+        <td><button @click="handleClick(4)" class="button">Nemzetiség</button></td>
+        <td><button @click="handleClick(5)" class="button">Szexualitás</button></td>
+        <td><button @click="handleClick(6)" class="button">Kínai horoszkóp</button></td>
+      </tr>
+      <tr>
+        <td><button @click="handleClick(7)" class="button">Görög mitológia</button></td>
+        <td><button @click="handleClick(8)" class="button">Római mitológia</button></td>
+        <td><button @click="handleClick(9)" class="button">Egyéb..</button></td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script setup>
@@ -31,16 +31,20 @@ const goToReligion = () => {
 
 const handleClick = (button) => {
   alert(`Button ${button} clicked!`);
-
 };
 </script>
 
 <style scoped>
-/* Button Base Styles */
+/* Table Styles */
+.table {
+  width: 100%;
+  justify-content: center;
+}
+
 .button {
   width: 200px;  /* Make buttons bigger */
   height: 100px;
-  background-color: #3498db; /* Blue background */
+  background-color: cadetblue; /* Blue background */
   color: white;
   font-size: 1.5rem; /* Larger text */
   font-weight: bold;

@@ -7,8 +7,9 @@
 <style scoped>
     .advertisement {
     width: 100%;
+    height: 300px;
     text-align: center;
-    background-color: white;
     margin-top: 25px;
+    color: black;
   }
 </style>
