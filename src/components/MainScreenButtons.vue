@@ -2,7 +2,7 @@
   <table class="table">
     <tbody>
       <tr>
-        <td><button @click="goToReligion" class="button">Vallás</button></td>
+        <td><button @click="handleClick(1)" class="button">Vallás</button></td>
         <td><button @click="handleClick(2)" class="button">Horoszkóp</button></td>
         <td><button @click="handleClick(3)" class="button">Személyiség típus</button></td>
       </tr>
@@ -30,7 +30,25 @@ const goToReligion = () => {
 };
 
 const handleClick = (button) => {
-  alert(`Button ${button} clicked!`);
+  if (button == 1) {
+    router.push('/vallas');
+  } else if (button == 2) {
+    router.push('/horoszkop');
+  } else if (button == 3) {
+    router.push('/szemelyisegtipus');
+  } else if (button == 4) {
+    router.push('/nemzetiseg');
+  } else if (button == 5) {
+    router.push('/szexualitas');
+  } else if (button == 6) {
+    router.push('/kinaihoroszkop');
+  } else if (button == 7) {
+    router.push('/gorogmitologia');
+  } else if (button == 8) {
+    router.push('/romaimitologia');
+  } else if (button == 9) {
+    router.push('/egyeb');
+  } 
 };
 </script>
 
