@@ -1,15 +1,20 @@
 <template>
-    <table class="table-auto bg-white p-6 rounded-lg shadow-lg">
-      <tbody class="space-y-6">
-        <tr class="space-x-6">
+    <table>
+      <tbody>
+        <tr>
             <td><button @click="goToReligion" class="button">Vallás</button></td>
             <td><button @click="handleClick(2)" class="button">Horoszkóp</button></td>
             <td><button @click="handleClick(3)" class="button">Személyiség típus</button></td>
         </tr>
-        <tr class="space-x-6">
+        <tr>
             <td><button @click="handleClick(4)" class="button">Nemzetiség</button></td>
             <td><button @click="handleClick(5)" class="button">Szexualitás</button></td>
             <td><button @click="handleClick(6)" class="button">Kínai horoszkóp</button></td>
+        </tr>
+        <tr>
+            <td><button @click="handleClick(4)" class="button">Görög mitólógia</button></td>
+            <td><button @click="handleClick(5)" class="button">Római mitólógia</button></td>
+            <td><button @click="handleClick(6)" class="button">Egyéb..</button></td>
         </tr>
       </tbody>
     </table>

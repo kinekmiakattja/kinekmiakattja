@@ -1,7 +1,7 @@
 // src/router/index.ts
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/Home.vue';
-import Religion from '../views/Religion.vue';
+import Home from '@/views/Home.vue';
+import Religion from '@/views/Religion.vue';
 
 const routes = [
   { path: '/', component: Home },
