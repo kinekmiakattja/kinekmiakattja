@@ -1,7 +1,12 @@
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import path from 'path'; // Import path module
 
 export default defineConfig({
   plugins: [vue()],
-  base: "/kinekmiakattja/",
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'), // Define @ as src/
+    },
+  },
 });
