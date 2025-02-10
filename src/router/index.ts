@@ -1,6 +1,6 @@
 // src/router/index.ts
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/views/Home.vue';
+import KattSelection from '@/views/KattSelection.vue';
 import Religion from '@/views/Religion.vue';
 import Horoscope from '@/views/Horoscope.vue';
 import Personality from '@/views/Personality.vue';
@@ -10,9 +10,11 @@ import ChineseHoroscope from '@/views/ChineseHoroscope.vue';
 import GreekMithology from '@/views/GreekMithology.vue';
 import RomanMithology from '@/views/RomanMithology.vue';
 import Other from '@/views/Other.vue';
+import LanguageSelection from '../components/LanguageSelection.vue';
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/', component: LanguageSelection },
+  { path: '/kattok', component: KattSelection },
   { path: '/vallas', component: Religion },
   { path: '/horoszkop', component: Horoscope },
   { path: '/szemelyisegtipus', component: Personality },

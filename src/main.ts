@@ -1,8 +1,10 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router';  // Import router
-import './index.css';  // Ensure Tailwind is loaded
+import router from './router';
+import i18n from './i18n';
+import '@/assets/tailwind.css';  // Import global Tailwind CSS
 
 const app = createApp(App);
 app.use(router);
-app.mount('#app');
+app.use(i18n);
+app.mount('#app')
