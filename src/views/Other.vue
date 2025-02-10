@@ -14,7 +14,7 @@
       <p>Javasolt téma: {{ formData.other }}</p>
     </div>
 
-    <button @click="goHome" class="button">Kilépés</button>
+    <button @click="goBack" class="button">Kilépés</button>
   </div>
 </template>
 
@@ -24,8 +24,8 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
-const goHome = () => {
-  router.push('/');  // Navigates to the home page (root route)
+const goBack = () => {
+  router.back();  // Navigates to the home page (root route)
 };
 // Reactive data to store the form data
 const formData = ref({
@@ -58,42 +58,5 @@ label {
 
 input[type="text"], input[type="radio"] {
   margin-bottom: 10px;
-}
-
-button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-.button {
-  width: 200px;
-  height: 50px;
-  background-color: cadetblue;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.button:hover {
-  background-color: #2980b9;
-  transform: scale(1.1);
-}
-
-.button:active {
-  transform: scale(1);
-  background-color: #1c6691;
 }
 </style>

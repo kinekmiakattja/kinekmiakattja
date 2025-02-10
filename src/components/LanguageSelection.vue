@@ -1,11 +1,15 @@
 <template>
-    <div class="container">
-      <!-- Language switcher -->
-      <button @click="changeLanguage('hu')">Magyar</button>
-      <button @click="changeLanguage('en')">English</button>
-      <button @click="buttonOtherClicked()">...</button>
-    </div>
-  </template>
+    <table class="table">
+      <tbody>
+        <tr>
+          <!-- Language switcher -->
+          <td><button @click="changeLanguage('hu')" class="button">Magyar</button></td>
+          <td><button @click="changeLanguage('en')" class="button">English</button></td>
+          <td><button @click="buttonOtherClicked()" class="button">...</button></td>
+        </tr>
+      </tbody>
+    </table>
+</template>
   
   <script setup>
   import { useI18n } from 'vue-i18n';
