@@ -14,7 +14,7 @@
       <tr>
         <td><button @click="handleClick(7)" class="button">Görög mitológia</button></td>
         <td><button @click="handleClick(8)" class="button">Római mitológia</button></td>
-        <td><button @click="handleClick(9)" class="button">Egyéb..</button></td>
+        <td><button @click="handleClick(9)" class="button">...</button></td>
       </tr>
     </tbody>
   </table>

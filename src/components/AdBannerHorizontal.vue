@@ -1,15 +1,29 @@
 <template>
-    <div class="advertisement">
-      🚀 Reklám helye 🚀
-    </div>
+  <div class="ad-container">
+    <ins 
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="XXXXXXXXXX"
+      data-ad-format="horizontal">
+    </ins>
+  </div>
 </template>
 
-<style scoped>
-    .advertisement {
-    width: 200px;
-    height: 100%;
-    text-align: center;
-    margin-top: 25px;
-    color: black;
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  if (window.adsbygoogle) {
+    window.adsbygoogle.push({});
   }
+});
+</script>
+
+<style scoped>
+.ad-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
 </style>
