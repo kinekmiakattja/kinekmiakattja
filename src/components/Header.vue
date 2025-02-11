@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <h1>"Kattanj rá te is, nézz fel az égre!"</h1>
+        <h1>"Kattanj rá te is!"</h1>
     </div>
 </template>
 
