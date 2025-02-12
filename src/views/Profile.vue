@@ -1,60 +1,50 @@
 <template>
-    <div class="form-container">
-      <form @submit.prevent="handleSubmit">
-        <div>
-          <label for="name">Profilod:</label>
-          <input type="text" id="name" v-model="formData.name" />
-        </div>
-      </form>
-  
-      <div v-if="submitted">
-        <h3>Profil mentve</h3>
-        <p>Mentett adat: {{ formData.name }}</p>
-      </div>
-      <button type="submit">Mentés</button>
-      <button @click="goBack" class="button">X</button>
-    </div>
-  </template>
-  
-  <script setup>
-  import { ref } from 'vue';
-  import { useRouter } from 'vue-router';
-  
-  const router = useRouter();
-  
-  const goBack = () => {
-    router.back();  // Navigates to the home page (root route)
-  };
-  // Reactive data to store the form data
-  const formData = ref({
-    name: '',
-    gender: ''
-  });
-  
-  // Track if the form has been submitted
-  const submitted = ref(false);
-  
-  // Handle form submission
-  const handleSubmit = () => {
-    submitted.value = true;
-  };
-  </script>
-  
-  <style scoped>
-  .form-container {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+  <div class="profile-container">
+    <h1>Saját profil</h1>
+    <input v-model="profile.name" type="text" placeholder="Írd be a neved" />
+    <input v-model="profile.avatar" type="text" placeholder="Avatar URL" />
+    <button @click="saveProfile">Mentés</button>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const profile = ref({ name: '', avatar: '' });
+
+onMounted(() => {
+  const savedProfile = JSON.parse(localStorage.getItem('profile'));
+  if (savedProfile) {
+    profile.value = savedProfile;
   }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"], input[type="radio"] {
-    margin-bottom: 10px;
-  }
-  </style>
+});
+
+const saveProfile = () => {
+  localStorage.setItem('profile', JSON.stringify(profile.value));
+  router.push('/'); // Redirect to home after saving
+};
+</script>
+
+<style scoped>
+.profile-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+button {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>

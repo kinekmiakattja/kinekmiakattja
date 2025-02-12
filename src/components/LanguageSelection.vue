@@ -5,7 +5,6 @@
           <!-- Language switcher -->
           <td><button @click="changeLanguage('hu')" class="button">Magyar</button></td>
           <td><button @click="changeLanguage('en')" class="button">English</button></td>
-          <td><button @click="buttonOtherClicked()" class="button">...</button></td>
         </tr>
       </tbody>
     </table>

@@ -20,5 +20,6 @@ onMounted(() => {
   justify-content: center;
   margin: 20px 0;
   background-color: aqua;
+  min-width: 100%;
 }
 </style>

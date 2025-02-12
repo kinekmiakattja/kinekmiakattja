@@ -6,7 +6,6 @@
     <div class="box"><router-view /></div>
     <div class="box"><AdBannerVertical /></div>
   </div>
-  <div></div>
   <AdBannerHorizontal />
   <Footer />
 </template>

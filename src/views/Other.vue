@@ -6,27 +6,18 @@
         <input type="text" id="other" v-model="formData.other" required />
       </div>
       
-      <button type="submit">Küldés</button>
+      <button type="submit" class="button">Küldés</button>
     </form>
 
     <div v-if="submitted">
       <h3>Javaslat elküldve</h3>
       <p>Javasolt téma: {{ formData.other }}</p>
     </div>
-
-    <button @click="goBack" class="button">Kilépés</button>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-
-const router = useRouter();
-
-const goBack = () => {
-  router.back();  // Navigates to the home page (root route)
-};
 // Reactive data to store the form data
 const formData = ref({
   name: '',
