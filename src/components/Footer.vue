@@ -6,10 +6,11 @@
   
 <style scoped>
   footer {
-    position: absolute;
     bottom: 0;
     width: 100%;
     background-color: gray;
     text-align: center;
+    position: relative;
+    z-index: 5; /* Lower than the banner */
   }
   </style>

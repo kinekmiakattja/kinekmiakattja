@@ -1,14 +1,24 @@
 <template>
-    <div class="advertisement">
-      🚀 Reklám helye 🚀
-    </div>
+  <div class="advertisement">
+    <p>REKLÁM</p>
+  </div>
 </template>
 
-<style scoped>
-    .advertisement {
-    width: 100%;
-    text-align: center;
-    margin-top: 25px;
-    color: black;
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  if (window.adsbygoogle) {
+    window.adsbygoogle.push({});
   }
+});
+</script>
+
+<style scoped>
+.advertisement {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  background-color: aqua;
+}
 </style>

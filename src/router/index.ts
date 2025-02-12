@@ -10,10 +10,11 @@ import ChineseHoroscope from '@/views/ChineseHoroscope.vue';
 import GreekMithology from '@/views/GreekMithology.vue';
 import RomanMithology from '@/views/RomanMithology.vue';
 import Other from '@/views/Other.vue';
-import LanguageSelection from '../components/LanguageSelection.vue';
+import LanguageSelection from '@/views/LanguageSelection.vue';
 
 const routes = [
-  { path: '/', component: LanguageSelection },
+  { path: '/', redirect: '/kattok' },
+  { path: '/nyelvek', component: LanguageSelection},
   { path: '/kattok', component: KattSelection },
   { path: '/vallas', component: Religion },
   { path: '/horoszkop', component: Horoscope },

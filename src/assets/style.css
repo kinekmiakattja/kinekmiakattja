@@ -38,3 +38,9 @@ button:hover {
   transform: scale(1);
   background-color: #1c6691;
 }
+
+header, .navbar {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}

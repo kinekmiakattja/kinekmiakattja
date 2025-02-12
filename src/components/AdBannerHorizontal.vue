@@ -1,12 +1,6 @@
 <template>
-  <div class="ad-container">
-    <ins 
-      class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-      data-ad-slot="XXXXXXXXXX"
-      data-ad-format="horizontal">
-    </ins>
+  <div class="advertisement">
+    <p>REKLÁM</p>
   </div>
 </template>
 
@@ -21,9 +15,10 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.ad-container {
+.advertisement {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+  background-color: aqua;
 }
 </style>
