@@ -19,10 +19,10 @@ const loadAd = () => {
   if (window.adsbygoogle && adContainer.value) {
     const adElement = adContainer.value.querySelector('.adsbygoogle');
 
-    // Check if the ad element is empty or already has an ad
+    // Check if the ad element already has an ad (using the 'data-ad-loaded' attribute)
     if (adElement && !adElement.hasAttribute('data-ad-loaded')) {
       adElement.setAttribute('data-ad-loaded', 'true'); // Mark as loaded
-      // Push the ad only if the ad slot is empty
+      // Push the ad if it's not already loaded
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     }
   }
