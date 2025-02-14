@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script>
 import AdBannerVertical from '@/components/AdBannerVertical.vue';
 import AdBannerHorizontal from '@/components/AdBannerHorizontal.vue';
 import Footer from '@/components/Footer.vue';
