@@ -1,8 +1,7 @@
 <template>
-  <div class="ads-container">
-    <!-- adbannervertical -->
+  <div ref="adContainer" class="ads-container">
     <ins class="adsbygoogle"
-      style="display:block"
+      style="display:block; width:100%; min-height:250px;"
       data-ad-client="ca-pub-6985347055044874"
       data-ad-slot="7628432361"
       data-ad-format="auto"
@@ -11,22 +10,30 @@
   </div>
 </template>
 
-<script>
-import { onMounted } from 'vue';
+<script setup lang="ts">
+import { onMounted, ref, nextTick } from "vue";
 
-  (adsbygoogle = window.adsbygoogle || []).push({});
+const adContainer = ref<HTMLElement | null>(null);
 
-onMounted(() => {
-  if (window.adsbygoogle) {
-    window.adsbygoogle.push({});
+const loadAd = () => {
+  if (window.adsbygoogle && adContainer.value) {
+    if (!adContainer.value.dataset.adLoaded) {
+      adContainer.value.dataset.adLoaded = "true"; // Prevent multiple loads
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
   }
+};
+
+onMounted(async () => {
+  await nextTick(); // Ensure DOM updates first
+  setTimeout(loadAd, 1500);
 });
 </script>
 
 <style scoped>
 .ads-container {
   width: 100%;
+  min-height: 250px;
   text-align: center;
-  margin: 10px 0;
 }
 </style>

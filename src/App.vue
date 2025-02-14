@@ -4,21 +4,38 @@
     <div class="content">
       <div class="title"><h1>Kattanj rá te is!</h1></div>
       <div class="container">
-        <div class="box"><AdBannerVertical /></div>
+        <div class="box ads-container" ref="adContainer"><AdBannerVertical /></div>
         <div class="box"><router-view /></div>
-        <div class="box"><AdBannerVertical /></div>
+        <div class="box ads-container" ref="adContainer"><AdBannerVertical /></div>
       </div>
-      <AdBannerHorizontal />
+      <div ref="adContainer" class="ads-container"><AdBannerHorizontal /></div>
     </div>
     <Footer />
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import AdBannerVertical from '@/components/AdBannerVertical.vue';
 import AdBannerHorizontal from '@/components/AdBannerHorizontal.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
+
+import { onMounted, ref } from "vue";
+
+const adContainer = ref<HTMLElement | null>(null);
+
+const loadAd = () => {
+  if (window.adsbygoogle && adContainer.value) {
+    if (!adContainer.value.dataset.loaded) {
+      adContainer.value.dataset.loaded = "true"; // Mark as loaded
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  }
+};
+
+onMounted(() => {
+  setTimeout(loadAd, 1500); // Delay to ensure proper loading
+});
 </script>
 
 <style scoped>
@@ -45,11 +62,18 @@ import Navbar from '@/components/Navbar.vue';
 
 .box {
   display: flex;
-  align-items: center;  /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  text-align: center; /* Ensures text is centered */
-  width: 100%; /* Optional: Ensure full width */
-  height: 100%; /* Optional: Adjust as needed */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
   flex: 1;
+}
+
+.ads-container {
+  display: block !important;
+  visibility: visible !important;
+  min-height: 90px;
+  background-color: transparent;
 }
 </style>
