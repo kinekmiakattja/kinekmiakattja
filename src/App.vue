@@ -4,7 +4,9 @@
     <div class="content">
       <div class="title"><h1>{{ t('slogan') }}</h1><hr /></div>
       <div class="container">
+        <div class="box"><AdBannerVertical /></div>
         <div class="box"><router-view /></div>
+        <div class="box"><AdBannerVertical /></div>
       </div>
       <div ref="adContainer" class="ads-container"><AdBannerHorizontal /></div>
     </div>
@@ -18,24 +20,8 @@ import AdBannerHorizontal from '@/components/AdBannerHorizontal.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import { useI18n } from 'vue-i18n';
-import { onMounted, ref } from "vue";
 
 const { t } = useI18n(); // Get the `t` function
-
-const adContainer = ref<HTMLElement | null>(null);
-
-const loadAd = () => {
-  if (window.adsbygoogle && adContainer.value) {
-    if (!adContainer.value.dataset.loaded) {
-      adContainer.value.dataset.loaded = "true"; // Mark as loaded
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    }
-  }
-};
-
-onMounted(() => {
-  setTimeout(loadAd, 1500); // Delay to ensure proper loading
-});
 </script>
 
 <style scoped>
