@@ -8,7 +8,7 @@
         <div class="box"><router-view /></div>
         <div class="box"><AdBannerVertical /></div>
       </div>
-      <div ref="adContainer" class="ads-container"><AdBannerHorizontal /></div>
+      <div><AdBannerHorizontal /></div>
     </div>
     <Footer />
   </div>
@@ -20,7 +20,7 @@ import AdBannerHorizontal from '@/components/AdBannerHorizontal.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import { useI18n } from 'vue-i18n';
-(adsbygoogle = window.adsbygoogle || []).push({});
+
 const { t } = useI18n(); // Get the `t` function
 </script>
 
