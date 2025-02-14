@@ -1,47 +1,31 @@
 <template>
   <nav class="navbar">
-    <div class="nav-left">
-      <router-link to="/" class="logo"><img :src="sitelogo" alt="App Logo" class="logo" /></router-link>
+    <div class="nav-left container">
+      <div class="box">
+        <router-link to="/" class="logo">
+          <img :src="sitelogo" alt="App Logo" class="logo" />
+        </router-link>
+      </div>
     </div>
-    <div class="nav-middle">
-      <table class="table">
-        <tbody>
-          <tr>
-            <!-- Language switcher -->
-            <td><button @click="changeLanguage('hu')" class="navbarButton">🇭🇺 Magyar</button></td>
-            <td><button @click="changeLanguage('en')" class="navbarButton">🇬🇧 English</button></td>
-        </tr>
-      </tbody>
-    </table>  
+    <div class="nav-middle"> 
     </div>
-    <div class="nav-right">
-      <router-link to="/profile" class="profile-button">
-        <img :src="profilelogo" alt="Profile Logo" class="logo" />
-      </router-link>
+    <div class="nav-right container">
+      <div class="box">
+        <LanguageSwitcher />
+      </div>
+      <div class="box">
+        <router-link to="/profile" class="profile-button">
+          <img :src="profilelogo" alt="Profile Logo" class="logo" />
+        </router-link>
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useI18n } from 'vue-i18n';
 import sitelogo from '@/assets/owl-logo.png';
 import profilelogo from '@/assets/profile-logo.png';
-
-const profile = ref({ avatar: '' });
-
-const changeLanguage = (lang) => {
-    locale.value = lang;  // Change language on button click
-    router.push('/kattok');
-};
-
-// Load profile from localStorage
-onMounted(() => {
-  const savedProfile = JSON.parse(localStorage.getItem('profile'));
-  if (savedProfile) {
-    profile.value = savedProfile;
-  }
-});
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
 </script>
 
 <style scoped>
@@ -64,5 +48,18 @@ onMounted(() => {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+}
+
+.container {
+  display: flex;
+  gap: 10px; /* Adds spacing between the boxes */
+}
+
+.box {
+  padding: 20px;
+}
+
+.button {
+  height: 30px;
 }
 </style>

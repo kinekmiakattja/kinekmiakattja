@@ -17,6 +17,7 @@ const adContainer = ref<HTMLElement | null>(null);
 
 const loadAd = () => {
   if (window.adsbygoogle && adContainer.value) {
+    // Check if the ad is already loaded within the container
     if (!adContainer.value.dataset.adLoaded) {
       adContainer.value.dataset.adLoaded = "true"; // Prevent multiple loads
       (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -26,7 +27,7 @@ const loadAd = () => {
 
 onMounted(async () => {
   await nextTick(); // Ensure DOM updates first
-  setTimeout(loadAd, 1500);
+  setTimeout(loadAd, 1500); // Delay ad loading slightly to avoid errors
 });
 </script>
 

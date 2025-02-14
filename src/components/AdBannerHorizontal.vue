@@ -5,8 +5,7 @@
       data-ad-client="ca-pub-6985347055044874"
       data-ad-slot="6071808119"
       data-ad-format="horizontal"
-      data-full-width-responsive="true"
-      :data-ad-loaded="adLoaded">
+      data-full-width-responsive="true">
     </ins>
   </div>
 </template>
@@ -15,17 +14,16 @@
 import { onMounted, ref, nextTick } from "vue";
 
 const adContainer = ref<HTMLElement | null>(null);
-const adLoaded = ref(false); // Track if the ad has been loaded
 
 const loadAd = () => {
   if (window.adsbygoogle && adContainer.value) {
     const adElement = adContainer.value.querySelector('.adsbygoogle');
 
-    // Check if the ad has already been loaded by checking a custom attribute
+    // Check if the ad element is empty or already has an ad
     if (adElement && !adElement.hasAttribute('data-ad-loaded')) {
       adElement.setAttribute('data-ad-loaded', 'true'); // Mark as loaded
+      // Push the ad only if the ad slot is empty
       (window.adsbygoogle = window.adsbygoogle || []).push({});
-      adLoaded.value = true; // Mark the ad as loaded in Vue state
     }
   }
 };

@@ -2,11 +2,9 @@
   <div class="app-container">
     <Navbar />
     <div class="content">
-      <div class="title"><h1>Kattanj rá te is!</h1></div>
+      <div class="title"><h1>{{ t('slogan') }}</h1><hr /></div>
       <div class="container">
-        <div class="box ads-container" ref="adContainer"><AdBannerVertical /></div>
         <div class="box"><router-view /></div>
-        <div class="box ads-container" ref="adContainer"><AdBannerVertical /></div>
       </div>
       <div ref="adContainer" class="ads-container"><AdBannerHorizontal /></div>
     </div>
@@ -19,8 +17,10 @@ import AdBannerVertical from '@/components/AdBannerVertical.vue';
 import AdBannerHorizontal from '@/components/AdBannerHorizontal.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
-
+import { useI18n } from 'vue-i18n';
 import { onMounted, ref } from "vue";
+
+const { t } = useI18n(); // Get the `t` function
 
 const adContainer = ref<HTMLElement | null>(null);
 
@@ -47,6 +47,8 @@ onMounted(() => {
 
 .content {
   flex: 1; /* Takes up remaining space, pushing the footer down */
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -75,5 +77,9 @@ onMounted(() => {
   visibility: visible !important;
   min-height: 90px;
   background-color: transparent;
+}
+
+footer {
+  margin-top: auto;
 }
 </style>
