@@ -14,13 +14,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import AdBannerVertical from '@/components/AdBannerVertical.vue';
 import AdBannerHorizontal from '@/components/AdBannerHorizontal.vue';
 import Footer from '@/components/Footer.vue';
 import Navbar from '@/components/Navbar.vue';
 import { useI18n } from 'vue-i18n';
-
+(adsbygoogle = window.adsbygoogle || []).push({});
 const { t } = useI18n(); // Get the `t` function
 </script>
 

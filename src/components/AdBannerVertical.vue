@@ -9,8 +9,7 @@
   </ins>
 </template>
 
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
+<script setup>
 </script>
 
 <style scoped>
