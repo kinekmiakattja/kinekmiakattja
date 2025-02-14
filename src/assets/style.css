@@ -2,18 +2,11 @@
 @tailwind components;
 @tailwind utilities;
   
-button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fff; /* Optional: Set a background color */
 }
 
 .button {

@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="nav-left">
-      <router-link to="/" class="logo">KinekMiAKattja</router-link>
+      <router-link to="/" class="logo"><img :src="sitelogo" alt="App Logo" class="logo" /></router-link>
     </div>
     <div class="nav-middle">
       <table class="table">
@@ -16,8 +16,7 @@
     </div>
     <div class="nav-right">
       <router-link to="/profile" class="profile-button">
-        <img v-if="profile.avatar" :src="profile.avatar" alt="Profile" class="profile-avatar" />
-        <span v-else>Profil</span>
+        <img :src="profilelogo" alt="Profile Logo" class="logo" />
       </router-link>
     </div>
   </nav>
@@ -26,6 +25,8 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
+import sitelogo from '@/assets/owl-logo.png';
+import profilelogo from '@/assets/profile-logo.png';
 
 const profile = ref({ avatar: '' });
 
@@ -58,7 +59,8 @@ onMounted(() => {
   color: white;
   text-decoration: none;
 }
-.profile-avatar {
+
+.logo {
   width: 30px;
   height: 30px;
   border-radius: 50%;
